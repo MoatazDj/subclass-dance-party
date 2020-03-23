@@ -26,8 +26,13 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.yo{
-  border:10px solid red;
+.dancer1{
+  border:10px solid lightskyblue;
   border-radius:10px;
+  position:absolute;
+}
+
+.dancer2{
+  border:10px solid rgb(15, 173, 126);
   position:absolute;
 }

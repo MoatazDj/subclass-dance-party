@@ -1,24 +1,40 @@
-var jigglyDance = function(top, left, timeBetweenSteps) {
-    MakeDancer.call(this,top, left, timeBetweenSteps);
-    this.$node = $('<span class="Jiggly"></span>');
-    this.setPosition(top, left);
+var makejigglyDancer = function(top, left, timeBetweenSteps) {
+  // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
+  // so we must keep a copy of the old version of this function
+  MakeDancer.call(this,top, left, timeBetweenSteps);
+  this.$node = $('<span class="dancer1"></span>')
+  this.setPosition(top, left)
+
 };
 
-jigglyDance.prototype = Object.create(MakeDancer.prototype);
-jigglyDance.prototype.constructor = jigglyDance;
+makejigglyDancer.prototype = Object.create(MakeDancer.prototype);
+makejigglyDancer.prototype.constructor = makejigglyDancer;
 
-var oldStep = MakeDancer.prototype.step;
 
-jigglyDance.prototype.step = function () {
-  oldStep.call(this, this.timeBetweenSteps);
+
+makejigglyDancer.prototype.step = function () {
+
+  MakeDancer.prototype.step.call(this, this.timeBetweenSteps);
   this.$node.toggle();
 };
 
-jigglyDance.prototype.setPosition = function(top, left) {
-    var styleSettings = {
-      top: top,
-      left: left,
-      "block-size": (top / 1.5)
-    };
-    this.$node.css(styleSettings);
-  };
+
+var makeLakhdharDancer = function(top, left, timeBetweenSteps) {
+  // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
+  // so we must keep a copy of the old version of this function
+  MakeDancer.call(this,top, left, timeBetweenSteps);
+  this.$node = $('<span class="dancer2"></span>')
+  this.setPosition(top, left)
+
+};
+
+makeLakhdharDancer.prototype = Object.create(MakeDancer.prototype);
+makeLakhdharDancer.prototype.constructor = makeLakhdharDancer;
+
+
+
+makeLakhdharDancer.prototype.step = function () {
+
+  MakeDancer.prototype.step.call(this, this.timeBetweenSteps);
+  this.$node.toggle();
+};
