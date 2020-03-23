@@ -22,7 +22,7 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = dancerMakerFunction(
+    var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
@@ -31,7 +31,7 @@ $(document).ready(function() {
   });
   $('.addJigglyButton').on('click', function(event){
 
-    var dancer = new jigglyDnce(
+    var dancer = new jigglyDance(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
