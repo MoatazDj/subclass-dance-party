@@ -29,5 +29,14 @@ $(document).ready(function() {
     );
     $('body').append(dancer.$node);
   });
+  $('.addJigglyButton').on('click', function(event){
+
+    var dancer = new jigglyDnce(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000
+    );
+    $('body').append(dancer.$node);
+  });
 });
 
